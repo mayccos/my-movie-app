@@ -12,9 +12,9 @@ const Popular = async () => {
     <div>
       <h2>Les plus populaires</h2>
       <div className={styles.container}>
-        {/* {popularMovies.map((movie) => (
+        {popularMovies.map((movie) => (
           <MediaCard key={movie.id} media={movie} />
-        ))} */}
+        ))}
       </div>
     </div>
   );
