@@ -3,6 +3,7 @@ import styles from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import MovieSearch from "../MovieSearch/MovieSearch";
 
 const Header = () => {
   return (
@@ -22,7 +23,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <input type="text" placeholder="Rechercher un titre..." />
+      <MovieSearch />
       <div>
         <FontAwesomeIcon icon={faUser} />
       </div>
