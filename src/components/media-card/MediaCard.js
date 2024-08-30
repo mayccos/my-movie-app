@@ -4,8 +4,6 @@ import styles from "./MediaCard.module.scss";
 import Link from "next/link";
 
 const MediaCard = ({ media }) => {
-  console.log(media);
-
   return (
     <div className={styles.card}>
       <Link href={`/movies/${media.id}`}>
