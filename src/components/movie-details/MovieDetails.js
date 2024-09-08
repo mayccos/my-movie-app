@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./MovieDetails.module.scss";
 import MovieCredits from "../movie-credits/MovieCredits";
 
-const MovieDetails = ({ movie }) => {
+const MovieDetails = async ({ movie }) => {
   return (
     <div className={styles.details}>
       <div className={styles.background}>

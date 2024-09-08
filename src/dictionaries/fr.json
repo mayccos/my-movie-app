@@ -1,0 +1,17 @@
+{
+  "popular": {
+    "title": "Les plus populaires"
+  },
+  "genres": {
+    "title": "Parcourir par genres"
+  },
+  "media": {
+    "release": "Date de sortie : "
+  },
+  "date": {
+    "format": "fr-FR"
+  },
+  "search": {
+    "placeholder": "Rechercher un titre..."
+  }
+}

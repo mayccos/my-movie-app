@@ -2,12 +2,23 @@
 
 import { useState } from "react";
 import { DebounceInput } from "react-debounce-input";
-import MovieSearchResults from "./MovieSearchResults/MovieSearchResults";
+import MovieSearchResults from "./movieSearchResults/MovieSearchResults";
 import styles from "./MovieSearch.module.scss";
+import { useParams } from "next/navigation";
 
 const MovieSearch = () => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
+
+  const textPlaceholder = () => {
+    const params = useParams();
+    console.log(params.locale);
+    if (params.locale == "fr") {
+      return "Rechercher un titre...";
+    } else {
+      return "Search for a title...";
+    }
+  };
 
   const updateMovieSearch = async (query) => {
     const response = await fetch(`/api/movies/search?query=${query}`);
@@ -22,7 +33,7 @@ const MovieSearch = () => {
         minLength={2}
         debounceTimeout={500}
         onChange={(e) => updateMovieSearch(e.target.value)}
-        placeholder="Rechercher un titre..."
+        placeholder={textPlaceholder()}
         onBlur={() => setHasFocus(false)}
         onFocus={() => setHasFocus(true)}
       />
