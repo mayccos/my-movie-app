@@ -12,7 +12,7 @@ const MovieSearch = () => {
 
   const textPlaceholder = () => {
     const params = useParams();
-    console.log(params.locale);
+
     if (params.locale == "fr") {
       return "Rechercher un titre...";
     } else {
