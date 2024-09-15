@@ -3,12 +3,12 @@ import Link from "next/link";
 import React from "react";
 import styles from "./MovieSearchResults.module.scss";
 
-const MovieSearchResults = ({ movieResults }) => {
+const MovieSearchResults = ({ movieResults, locale }) => {
   return (
     <div className={styles.searchResults}>
       {movieResults.map((movie) => (
         <div key={movie.id}>
-          <Link href={`/movies/${movie.id}`}>
+          <Link href={`${locale}/movies/${movie.id}`}>
             <Image
               width={90}
               height={50}

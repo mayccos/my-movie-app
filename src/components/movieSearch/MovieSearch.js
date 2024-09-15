@@ -37,7 +37,7 @@ const MovieSearch = () => {
         onBlur={() => setHasFocus(false)}
         onFocus={() => setHasFocus(true)}
       />
-      {movieResults.length > 0 && hasFocus && (
+      {movieResults.length > 0 && (
         <MovieSearchResults movieResults={movieResults} />
       )}
     </div>

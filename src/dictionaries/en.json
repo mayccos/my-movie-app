@@ -9,9 +9,6 @@
     "release": "Release date : "
   },
   "date": {
-    "format": "fr-FR"
-  },
-  "search": {
-    "placeholder": "Search for a title..."
+    "format": "en-US"
   }
 }

@@ -10,8 +10,5 @@
   },
   "date": {
     "format": "fr-FR"
-  },
-  "search": {
-    "placeholder": "Rechercher un titre..."
   }
 }
