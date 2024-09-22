@@ -2,10 +2,21 @@
 
 import styles from "./SignupForm.module.scss";
 
-import React from "react";
-import { signIn } from "next-auth/react";
+import React, { useEffect } from "react";
+import { signIn, useSession } from "next-auth/react";
+import traductionPage from "@/utils/translatedText";
+import { useRouter } from "next/navigation";
 
 const SignupForm = () => {
+  const { status } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (status === "authenticated") {
+      router.push("/user/profile");
+    }
+  }, [status, router]);
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -21,13 +32,14 @@ const SignupForm = () => {
       }
     });
   };
+  const { ...text } = traductionPage();
   return (
     <div className={styles.signupForm}>
       <form onSubmit={handleFormSubmit}>
         <h1>Inscription</h1>
         <input type="text" name="email" placeholder="E-mail" />
         <input type="password" name="password" placeholder="**********" />
-        <input className={styles.submit} type="submit" value="S'inscrire" />
+        <input className={styles.submit} type="submit" value={text[9]} />
       </form>
     </div>
   );

@@ -2,8 +2,12 @@ import React, { Suspense } from "react";
 import Image from "next/image";
 import styles from "./MovieDetails.module.scss";
 import MovieCredits from "../movie-credits/MovieCredits";
+import { getDictionary } from "@/utils/dictionaries";
 
-const MovieDetails = async ({ movie }) => {
+const MovieDetails = async ({ movie, locale }) => {
+  const i18n = await getDictionary(locale);
+  console.log(i18n);
+
   return (
     <div className={styles.details}>
       <div className={styles.background}>
@@ -24,7 +28,11 @@ const MovieDetails = async ({ movie }) => {
           <h1>
             {movie.title}{" "}
             <span className={styles.releaseDate}>
-              ({new Date(movie.release_date).toLocaleDateString("fr-FR")})
+              (
+              {new Date(movie.release_date).toLocaleDateString(
+                `${i18n.date.format}`
+              )}
+              )
             </span>
           </h1>
           <p className={styles.production}>

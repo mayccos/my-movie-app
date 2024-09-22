@@ -5,10 +5,12 @@ import { DebounceInput } from "react-debounce-input";
 import MovieSearchResults from "./movieSearchResults/MovieSearchResults";
 import styles from "./MovieSearch.module.scss";
 import { useParams } from "next/navigation";
+import { useCurrentLanguage } from "@/hooks/useCurrentLanguage";
 
 const MovieSearch = () => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
+  const currentLanguage = useCurrentLanguage();
 
   const textPlaceholder = () => {
     const params = useParams();
@@ -34,11 +36,14 @@ const MovieSearch = () => {
         debounceTimeout={500}
         onChange={(e) => updateMovieSearch(e.target.value)}
         placeholder={textPlaceholder()}
-        onBlur={() => setHasFocus(false)}
+        onBlurCapture={() => setHasFocus(false)}
         onFocus={() => setHasFocus(true)}
       />
-      {movieResults.length > 0 && (
-        <MovieSearchResults movieResults={movieResults} />
+      {movieResults.length > 0 && hasFocus && (
+        <MovieSearchResults
+          movieResults={movieResults}
+          locale={currentLanguage}
+        />
       )}
     </div>
   );

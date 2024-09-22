@@ -4,11 +4,16 @@ import React from "react";
 import styles from "./MovieSearchResults.module.scss";
 
 const MovieSearchResults = ({ movieResults, locale }) => {
+  console.log(locale);
+
   return (
     <div className={styles.searchResults}>
       {movieResults.map((movie) => (
         <div key={movie.id}>
-          <Link href={`${locale}/movies/${movie.id}`}>
+          <Link
+            href={`/${locale}/movies/${movie.id}`}
+            onMouseDown={(e) => e.preventDefault()}
+          >
             <Image
               width={90}
               height={50}

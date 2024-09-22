@@ -15,7 +15,7 @@ const MovieIdPage = async ({ params: { id, locale } }) => {
   }
   return (
     <div>
-      <MovieDetails movie={movie} />
+      <MovieDetails movie={movie} locale={locale} />
       <Suspense fallback={<p>Chargement...</p>}>
         <SimilarMovies movieId={movie.id} locale={locale} />
       </Suspense>
