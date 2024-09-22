@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./MediaCard.module.scss";
 import Link from "next/link";
 import { getDictionary } from "@/utils/dictionaries";
+import Like from "./like/Like";
 
 const MediaCard = async ({ media, locale }) => {
   const i18n = await getDictionary(locale);
@@ -11,6 +12,7 @@ const MediaCard = async ({ media, locale }) => {
     <div className={styles.card}>
       <Link href={`/${locale}/movies/${media.id}`}>
         <div className={styles.image}>
+          <Like mediaId={media.id} />
           <Image
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
             alt={media.title}
