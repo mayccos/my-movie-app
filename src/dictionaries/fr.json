@@ -9,7 +9,8 @@
     "title": "Parcourir par genres"
   },
   "media": {
-    "release": "Date de sortie : "
+    "release": "Date de sortie : ",
+    "seasons": "Nombre de saisons : "
   },
   "date": {
     "format": "fr-FR"

@@ -22,7 +22,7 @@ const SerieCard = async ({ media, locale }) => {
         <div className={styles.content}>
           <p className={styles.vote}>{media.vote_average}</p>
           <h3>{media.name}</h3>
-          <p>{media.genres}</p>
+          <p>{media.season_number}</p>
         </div>
       </Link>
     </div>
