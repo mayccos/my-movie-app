@@ -5,12 +5,12 @@ import Link from "next/link";
 import { getDictionary } from "@/utils/dictionaries";
 import Like from "./like/Like";
 
-const MediaCard = async ({ media, locale }) => {
+const SerieCard = async ({ media, locale }) => {
   const i18n = await getDictionary(locale);
 
   return (
     <div className={styles.card}>
-      <Link href={`/${locale}/movies/${media.id}`}>
+      <Link href={`/${locale}/serie/${media.id}`}>
         <div className={styles.image}>
           <Like mediaId={media.id} />
           <Image
@@ -21,17 +21,12 @@ const MediaCard = async ({ media, locale }) => {
         </div>
         <div className={styles.content}>
           <p className={styles.vote}>{media.vote_average}</p>
-          <h3>{media.title}</h3>
-          <p>
-            {i18n.media.release}
-            {new Date(media.release_date).toLocaleDateString(
-              `${i18n.date.format}`
-            )}
-          </p>
+          <h3>{media.name}</h3>
+          <p>{media.genres}</p>
         </div>
       </Link>
     </div>
   );
 };
 
-export default MediaCard;
+export default SerieCard;

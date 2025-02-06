@@ -1,11 +1,11 @@
-import { getMovieByPath } from "@/utils/movieClient";
-import styles from "./SimilarMovies.module.scss";
+import { getMediaByPath } from "@/utils/mediaClient";
+import styles from "./SimilarMedias.module.scss";
 
 import React from "react";
-import MediaCard from "../media-card/MediaCard";
+import MediaCard from "../media-card/MovieCard";
 
 const SimilarMovies = async ({ movieId, locale }) => {
-  const { results } = await getMovieByPath(
+  const { results } = await getMediaByPath(
     `/movie/${movieId}/similar`,
     [],
     locale

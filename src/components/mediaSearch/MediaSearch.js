@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { DebounceInput } from "react-debounce-input";
-import MovieSearchResults from "./movieSearchResults/MovieSearchResults";
-import styles from "./MovieSearch.module.scss";
+import MediaSearchResults from "./mediaSearchResults/MediaSearchResults";
+import styles from "./MediaSearch.module.scss";
 import { useParams } from "next/navigation";
 import { useCurrentLanguage } from "@/hooks/useCurrentLanguage";
 
-const MovieSearch = () => {
+const MediaSearch = () => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
   const currentLanguage = useCurrentLanguage();
@@ -40,7 +40,7 @@ const MovieSearch = () => {
         onFocus={() => setHasFocus(true)}
       />
       {movieResults.length > 0 && hasFocus && (
-        <MovieSearchResults
+        <MediaSearchResults
           movieResults={movieResults}
           locale={currentLanguage}
         />
@@ -49,4 +49,4 @@ const MovieSearch = () => {
   );
 };
 
-export default MovieSearch;
+export default MediaSearch;

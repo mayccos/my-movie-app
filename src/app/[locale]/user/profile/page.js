@@ -2,8 +2,8 @@ import LogoutButton from "@/components/logout-button/LogoutButton";
 import styles from "./page.module.scss";
 import { getServerSession } from "next-auth";
 import prisma from "@/utils/prisma";
-import { getHydratedMovies } from "@/utils/movieClient";
-import MediaCard from "@/components/media-card/MediaCard";
+import { getHydratedMedias } from "@/utils/mediaClient";
+import MediaCard from "@/components/media-card/MovieCard";
 
 const ProfilePage = async ({ params: { locale } }) => {
   const { user: userSession } = await getServerSession();
@@ -15,7 +15,7 @@ const ProfilePage = async ({ params: { locale } }) => {
     },
   });
 
-  const movies = await getHydratedMovies(posts.map((movie) => movie.movieId));
+  const movies = await getHydratedMedias(posts.map((movie) => movie.movieId));
   return (
     <div className={styles.profile}>
       <div className={styles.head}>

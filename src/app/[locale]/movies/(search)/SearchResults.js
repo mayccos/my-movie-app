@@ -1,9 +1,9 @@
-import { getMovieByPath } from "@/utils/movieClient";
+import { getMediaByPath } from "@/utils/mediaClient";
 import styles from "./SearchResults.module.scss";
-import MediaCard from "@/components/media-card/MediaCard";
+import MediaCard from "@/components/media-card/MovieCard";
 
 const SearchResults = async ({ searchParams, genreId, locale }) => {
-  const { results } = await getMovieByPath(
+  const { results } = await getMediaByPath(
     "/discover/movie",
     [
       { key: "sort_by", value: searchParams.sort_by },

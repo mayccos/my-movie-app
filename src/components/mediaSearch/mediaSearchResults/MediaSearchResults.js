@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import styles from "./MovieSearchResults.module.scss";
+import styles from "./MediaSearchResults.module.scss";
 
-const MovieSearchResults = ({ movieResults, locale }) => {
+const MediaSearchResults = ({ movieResults, locale }) => {
   console.log(locale);
 
   return (
@@ -28,4 +28,4 @@ const MovieSearchResults = ({ movieResults, locale }) => {
   );
 };
 
-export default MovieSearchResults;
+export default MediaSearchResults;

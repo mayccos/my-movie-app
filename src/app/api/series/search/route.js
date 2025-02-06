@@ -4,7 +4,7 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const query = searchParams.get("query");
 
-  const searchResults = await getMediaByPath("/search/movie", [
+  const searchResults = await getMediaByPath("/search/tv", [
     { key: "query", value: query },
   ]);
 

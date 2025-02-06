@@ -1,7 +1,5 @@
 import React from "react";
 
-const SeriesPage = () => {
-  return <div></div>;
-};
+const SeriesPage = ({ params: { locale }, searchParams }) => {};
 
 export default SeriesPage;

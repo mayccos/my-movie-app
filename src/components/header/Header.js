@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import MovieSearch from "../movieSearch/MovieSearch";
+import MediaSearch from "../mediaSearch/MediaSearch";
 import LanguageSelector from "../language-selector/LanguageSelector";
 
 const Header = ({ locale }) => {
@@ -26,7 +26,7 @@ const Header = ({ locale }) => {
             </li>
           </ul>
         </nav>
-        <MovieSearch />
+        <MediaSearch />
         <div>
           <Link href={`/${locale}/user/profile`}>
             <FontAwesomeIcon icon={faUser} />

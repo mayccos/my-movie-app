@@ -1,6 +1,6 @@
 import "server-only";
 
-export const getMovieByPath = (path, params = [], language = "fr-FR") => {
+export const getMediaByPath = (path, params = [], language = "fr-FR") => {
   const url = new URL(`https://api.themoviedb.org/3${path}`);
   url.searchParams.append("api_key", process.env.TMDB_API_KEY);
   url.searchParams.append("language", language);
@@ -13,9 +13,9 @@ export const getMovieByPath = (path, params = [], language = "fr-FR") => {
   return fetch(url).then((res) => res.json());
 };
 
-export const getHydratedMovies = async (movieIds, language = "fr") => {
+export const getHydratedMedias = async (movieIds, language = "fr") => {
   const moviePromises = movieIds.map((movieId) =>
-    getMovieByPath(`/movie/${movieId}`, [], language)
+    getMediaByPath(`/movie/${movieId}`, [], language)
   );
 
   const movies = await Promise.all(moviePromises);

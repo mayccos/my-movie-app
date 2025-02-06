@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
-import styles from "./MovieDetails.module.scss";
-import MovieCredits from "../movie-credits/MovieCredits";
+import styles from "./MediaDetails.module.scss";
+import MediaCredits from "../media-credits/MediaCredits";
 import { getDictionary } from "@/utils/dictionaries";
 
-const MovieDetails = async ({ movie, locale }) => {
+const MediaDetails = async ({ movie, locale }) => {
   const i18n = await getDictionary(locale);
   console.log(i18n);
 
@@ -47,7 +47,7 @@ const MovieDetails = async ({ movie, locale }) => {
           <p className={styles.overview}>{movie.overview}</p>
           <div className={styles.credits}>
             <Suspense fallback={<p>Chargement...</p>}>
-              <MovieCredits movieId={movie.id} />
+              <MediaCredits movieId={movie.id} />
             </Suspense>
           </div>
         </div>
@@ -56,4 +56,4 @@ const MovieDetails = async ({ movie, locale }) => {
   );
 };
 
-export default MovieDetails;
+export default MediaDetails;

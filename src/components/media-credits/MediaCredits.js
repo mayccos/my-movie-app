@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./MovieCredits.module.scss";
-import { getMovieByPath } from "@/utils/movieClient";
+import styles from "./MediaCredits.module.scss";
+import { getMediaByPath } from "@/utils/mediaClient";
 import Image from "next/image";
 
-const MovieCredits = async ({ movieId }) => {
-  const { cast } = await getMovieByPath(`/movie/${movieId}/credits`);
+const MediaCredits = async ({ movieId }) => {
+  const { cast } = await getMediaByPath(`/movie/${movieId}/credits`);
 
   return (
     <div className={styles.credits}>
@@ -23,4 +23,4 @@ const MovieCredits = async ({ movieId }) => {
   );
 };
 
-export default MovieCredits;
+export default MediaCredits;

@@ -1,6 +1,9 @@
 {
   "popular": {
-    "title": "Most popular"
+    "title": {
+      "movie": "Most popular movies",
+      "serie": "Most popular series"
+    }
   },
   "genres": {
     "title": "Browse by genres"

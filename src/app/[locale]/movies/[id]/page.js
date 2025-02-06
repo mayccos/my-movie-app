@@ -1,6 +1,6 @@
-import MovieDetails from "@/components/movie-details/MovieDetails";
-import SimilarMovies from "@/components/similar-movies/SimilarMovies";
-import { getMovieByPath } from "@/utils/movieClient";
+import MediaDetails from "@/components/media-details/MediaDetails";
+import SimilarMedias from "@/components/similar-medias/SimilarMedias";
+import { getMediaByPath } from "@/utils/mediaClient";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -8,16 +8,16 @@ export const dynamic = "force-static";
 export const revalidate = 3600;
 
 const MovieIdPage = async ({ params: { id, locale } }) => {
-  const movie = await getMovieByPath(`/movie/${id}`, [], locale);
+  const movie = await getMediaByPath(`/movie/${id}`, [], locale);
 
   if (!movie.original_title) {
     return notFound();
   }
   return (
     <div>
-      <MovieDetails movie={movie} locale={locale} />
+      <MediaDetails movie={movie} locale={locale} />
       <Suspense fallback={<p>Chargement...</p>}>
-        <SimilarMovies movieId={movie.id} locale={locale} />
+        <SimilarMedias movieId={movie.id} locale={locale} />
       </Suspense>
     </div>
   );
