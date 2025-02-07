@@ -6,7 +6,10 @@
     }
   },
   "genres": {
-    "title": "Parcourir par genres"
+    "title": {
+      "movie": "Parcourir les films par genres",
+      "serie": "Parcourir les séries par genres"
+    }
   },
   "media": {
     "release": "Date de sortie : ",

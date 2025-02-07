@@ -10,7 +10,7 @@ const SerieCard = async ({ media, locale }) => {
 
   return (
     <div className={styles.card}>
-      <Link href={`/${locale}/serie/${media.id}`}>
+      <Link href={`/${locale}/movie/${media.id}`}>
         <div className={styles.image}>
           <Like mediaId={media.id} />
           <Image

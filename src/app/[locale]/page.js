@@ -7,8 +7,10 @@ export default function Home({ params: { locale } }) {
   return (
     <div className={styles.main}>
       <MoviePopular locale={locale} />
+      <Genres locale={locale} media={"movie"} medias="movies" />
+
       <SeriePopular locale={locale} />
-      <Genres locale={locale} />
+      <Genres locale={locale} media={"tv"} medias="series" />
     </div>
   );
 }

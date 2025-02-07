@@ -1,5 +1,5 @@
 import MediaDetails from "@/components/media-details/MediaDetails";
-import SimilarMedias from "@/components/similar-medias/SimilarMedias";
+import SimilarMovies from "@/components/similar-medias/SimilarMovies";
 import { getMediaByPath } from "@/utils/mediaClient";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -17,7 +17,7 @@ const MovieIdPage = async ({ params: { id, locale } }) => {
     <div>
       <MediaDetails movie={movie} locale={locale} />
       <Suspense fallback={<p>Chargement...</p>}>
-        <SimilarMedias movieId={movie.id} locale={locale} />
+        <SimilarMovies movieId={movie.id} locale={locale} />
       </Suspense>
     </div>
   );

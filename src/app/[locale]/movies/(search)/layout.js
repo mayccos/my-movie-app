@@ -7,7 +7,7 @@ const MovieSearchLayout = async ({ children, params: { locale } }) => {
   const { genres } = await getMediaByPath("/genre/movie/list", [], locale);
   return (
     <div className={styles.searchContainer}>
-      <SearchSideBar genres={genres} />
+      <SearchSideBar genres={genres} media="movies" />
       <div>{children}</div>
     </div>
   );

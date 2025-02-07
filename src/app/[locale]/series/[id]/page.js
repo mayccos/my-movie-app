@@ -1,5 +1,5 @@
 import MediaDetails from "@/components/media-details/MediaDetails";
-import SimilarMedias from "@/components/similar-medias/SimilarMedias";
+import SimilarMedias from "@/components/similar-medias/SimilarMovies";
 import { getMediaByPath } from "@/utils/mediaClient";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
